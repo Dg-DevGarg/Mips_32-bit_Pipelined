@@ -24,6 +24,7 @@ module MEMWB(input clk,input [31:0] read_data,alu_result,input[4:0] Dest,input R
 reg [31:0] read_data_reg,alu_result_reg;
 reg [4:0] Dest_reg;
 reg RegWrite_reg,Jump_reg,MemtoReg_reg;
+initial {read_data_reg,alu_result_reg,Dest_reg,RegWrite_reg,Jump_reg,MemtoReg_reg} = 0;
 always@(posedge clk)
 begin
 {read_data_reg,alu_result_reg,Dest_reg,RegWrite_reg,Jump_reg,MemtoReg_reg}<={read_data,alu_result,Dest, RegWrite,Jump,MemtoReg};
