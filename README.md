@@ -10,7 +10,7 @@ This project is a 32-bit MIPS-based processor built using Verilog. It implements
 - Supports ALU operations, memory access, branching, and jumping
 - Implements **data hazard resolution** via a forwarding unit
 - Testbench with multiple instruction sequences
-- Waveform verification using GTKWave/ModelSim
+- Waveform verification using Xilinx Vivado
 
 ---
 
@@ -21,17 +21,17 @@ This project is a 32-bit MIPS-based processor built using Verilog. It implements
 - `EXMEM_reg.v`, `IDEX.v`, `IFID_reg.v`, `MEMWB.v` – Pipeline registers
 - `data_mem.v`, `ins_mem.v`, `registers.v` – Memories and register file
 - `forwarding_unit.v` – Data hazard detection and forwarding
-- `testbench.v` – Sample program for testing processor behavior
+- `tb.v` – Sample program for testing processor behavior
 
 ---
 
 ## 🖼️ Images
 
 ### 🔧 Pipelined Datapath
-![Datapath](assets/datapath_pipeline.png)
+![Datapath](assets/datapath_pipeline.jpg)
 
 ### ➿ Forwarding Unit
-![Forwarding](assets/forwarding_unit.png)
+![Forwarding](assets/forwarding_unit.jpg)
 
 ### 📊 Sample Waveform 1
 ![Waveform 1](assets/waveform1.png)
@@ -48,7 +48,4 @@ This project is a 32-bit MIPS-based processor built using Verilog. It implements
 
 The processor has been tested with arithmetic, memory, and control instructions. Simulation waveforms verify forwarding and hazard handling.
 
----
-
-## 📂 Folder Structure
 
