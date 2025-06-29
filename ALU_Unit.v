@@ -38,7 +38,7 @@ module ALU_unit(
  4'b0110: out_d=operand_1-operand_2;
  4'b0111: out_d=operand_1>operand_2;
  4'b1100: out_d=~(operand_1|operand_2);
- default:out_d=33'b0;
+ default:out_d=operand_1+ operand_2;
  endcase
  end
  
