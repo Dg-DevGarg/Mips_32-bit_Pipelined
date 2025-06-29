@@ -31,7 +31,7 @@ This project is a 32-bit MIPS-based processor built using Verilog. It implements
 ![Datapath](assets/datapath_pipeline.jpg)
 
 ### ➿ Forwarding Unit
-![Forwarding](assets/forwarding_unit.jpg)
+![Forwarding](assets/fwd_unit.jpg)
 
 ### 📊 Sample Waveform 1
 ![Waveform 1](assets/waveform1.png)
