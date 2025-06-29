@@ -30,16 +30,18 @@ ForwardA=2'b00;
 ForwardB=2'b00;
 //EX Hazard
 if(EXMEM_RegWrite && EXMEM_RegRd!=0 && EXMEM_RegRd==IDEX_RegRs) ForwardA=2'b10;
-else ForwardA=2'b00;
+else if(MEMWB_RegWrite && MEMWB_RegRd!=0 && ~(EXMEM_RegWrite && (EXMEM_RegRd!=0) && (EXMEM_RegRd!=IDEX_RegRs)) &&
+MEMWB_RegRd==IDEX_RegRs) ForwardA=2'b01;
+//else ForwardA=2'b00;
 if(EXMEM_RegWrite && EXMEM_RegRd!=0 && EXMEM_RegRd==IDEX_RegRt) ForwardB=2'b10;
-ForwardB=2'b00;
+else if(MEMWB_RegWrite && MEMWB_RegRd!=0 && ~(EXMEM_RegWrite && (EXMEM_RegRd!=0) && (EXMEM_RegRd!=IDEX_RegRs)) &&
+MEMWB_RegRd==IDEX_RegRt) ForwardB=2'b01;
+//ForwardB=2'b00;
 
 //WB hazard
-if(MEMWB_RegWrite && MEMWB_RegRd!=0 && ~(EXMEM_RegWrite && (EXMEM_RegRd!=0) && (EXMEM_RegRd!=IDEX_RegRs)) &&
-MEMWB_RegRd==IDEX_RegRs) ForwardA=2'b01;
-else ForwardA=2'b00;
-if(MEMWB_RegWrite && MEMWB_RegRd!=0 && ~(EXMEM_RegWrite && (EXMEM_RegRd!=0) && (EXMEM_RegRd!=IDEX_RegRs)) &&
-MEMWB_RegRd==IDEX_RegRt) ForwardB=2'b01;
-else ForwardB=2'b00;
+
+//else ForwardA=2'b00;
+
+//else ForwardB=2'b00;
 end
 endmodule
