@@ -26,6 +26,7 @@ input clk,
 output [31:0] instruction_out, pc_out
     );
 reg [31:0] a,b;
+initial {a,b} = 64'b0;
 always@(posedge clk) begin
 a<=instruction_memory;
 b<=pc_next;
