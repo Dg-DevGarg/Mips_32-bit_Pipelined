@@ -31,7 +31,8 @@ output[4:0] register_dest_out
     );
 reg[5:0] a;
 reg[31:0] b,c,d;
-reg[4:0] e;    
+reg[4:0] e; 
+initial {a,b,c,d,e} = 107'b0;   
 always@(posedge clk)begin
 a<={MemtoReg,RegWrite,MemRead,MemWrite,Branch,zero};
 b<=add_result;
