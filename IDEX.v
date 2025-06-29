@@ -25,6 +25,7 @@ reg [31:0]read_data1_reg,read_data2_reg,immediate_reg,pc_addr_reg;
 reg [4:0] IFID_REGRS_reg,IFID_REGRT_reg,IFID_REGRD_reg;
 reg [1:0] alu_op_reg;
 reg RegDst_reg, AluSrc_reg, MemtoReg_reg,RegWrite_reg,Memread_reg, MemWrite_reg, Branch_reg,Jump_reg;
+initial {read_data1_reg,read_data2_reg,immediate_reg,pc_addr_reg,IFID_REGRS_reg,IFID_REGRT_reg,alu_op_reg,RegDst_reg, AluSrc_reg, MemtoReg_reg,RegWrite_reg,Memread_reg, MemWrite_reg, Branch_reg,Jump_reg,IFID_REGRD_reg}=0;
 always@(posedge clk) begin
 {read_data1_reg,read_data2_reg,immediate_reg,pc_addr_reg,IFID_REGRS_reg,IFID_REGRT_reg,alu_op_reg,RegDst_reg, AluSrc_reg, MemtoReg_reg,RegWrite_reg,Memread_reg, MemWrite_reg, Branch_reg,Jump_reg,IFID_REGRD_reg}<={read_data1,read_data2,immediate,pc_addr,IFID_REGRS,IFID_REGRT,alu_op,RegDst, AluSrc, MemtoReg,RegWrite,Memread, MemWrite, Branch,Jump,IFID_REGRD};
 end
